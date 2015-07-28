@@ -11,7 +11,7 @@ require('./models/Users');
 require('./config/passport');
 require('./models/Posts.js');
 require('./models/Comments.js');
-mongoose.connect('mongodb://localhost/news');
+mongoose.connect('mongodb://root:root@ds027483.mongolab.com:27483/testdb');
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var http = require('http');
