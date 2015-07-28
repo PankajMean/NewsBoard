@@ -1,0 +1,36 @@
+<html>
+
+<head>
+    <title>My Mean App!</title>
+    <link href="/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="/lib/angular/angular.min.js"></script>
+    <script src="/lib/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="/js/controllers/angularApp.js"></script>
+    <script src="/js/services/PostService.js"></script>
+    <script src="/js/services/AuthenticationService.js"></script>
+    <script src="/js/controllers/NavigationController.js"></script>
+    <script src="/js/controllers/MainController.js"></script>
+    <script src="/js/controllers/PostController.js"></script>
+    <script src="/js/controllers/AuthenticationController.js"></script>
+
+</head>
+
+<body ng-app="newsBoard" ng-controller="MainCtrl">
+    <nav class="navbar navbar-default pull-right" ng-controller="NavCtrl">
+        <ul class="nav navbar-nav">
+            <li ng-show="isLoggedIn()"><a>{{ currentUser() }}</a></li>
+            <li ng-show="isLoggedIn()"><a href="" ng-click="logOut()">Log Out</a></li>
+            <li ng-hide="isLoggedIn()"><a href="/#/login">Log In</a></li>
+            <li ng-hide="isLoggedIn()"><a href="/#/register">Register</a></li>
+        </ul>
+    </nav>
+
+
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <ui-view></ui-view>
+        </div>
+    </div>
+</body>
+
+</html>
